@@ -73,19 +73,5 @@ public class UserDatabase {
         }
         return false;
     }
-    public boolean RegisterNewUser(){
 
-        String name = "";
-        +
-        for (User u : listOFUsers){
-            if (u.getName().equals(name)){
-                return false;// znamená že jméno je už zabrané
-            }
-        }
-        listOFUsers.add(name, createPasswordRegexMethod());
-        return true;
-    }
-    public String createPasswordRegexMethod(){
-
-    }
 }
