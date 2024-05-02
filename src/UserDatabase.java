@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class UserDatabase {
-    private ArrayList<User> listOFUsers;
+    private ArrayList<User> listOFUsers = new ArrayList<>();
     private User activeUser;
 
     public void getListFromDocument(){
@@ -48,29 +48,44 @@ public class UserDatabase {
                 bw.newLine();
                  */
             }
-            bw.write(returnedString);// lepší způsob 
+            bw.write(returnedString);// lepší způsob
+            bw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
 
-    public void register(){
-
-    }
-    public boolean LogIN(){
-        String name = "";
-        String password = "";
-        User potencionalUser = null;
+    public boolean register(String name,String password){
+        boolean isPosible = true;
+        if (name.length() < 1){
+            isPosible = false;
+            return isPosible;
+        }
         for (User u : listOFUsers){
             if (u.getName().equals(name)){
-                potencionalUser = u;
+                isPosible = false;
+                return isPosible;
             }
         }
-        if (potencionalUser.getPassword().equals(password)){
-            activeUser = potencionalUser;
-            return true;
+        listOFUsers.add(new User(name,password));
+        activeUser = listOFUsers.get(listOFUsers.size()-1);
+        this.createDocumentByLIst();
+        return isPosible;
+
+    }
+    public boolean LogIN(String name,String password){
+        User potencionalUser;
+        for (User u : listOFUsers){
+            potencionalUser = u;
+            if (u.getName().equals(name)){
+                if (potencionalUser.getPassword().equals(password)){
+                    activeUser = potencionalUser;
+                    return true;
+                }
+            }
         }
+
         return false;
     }
 

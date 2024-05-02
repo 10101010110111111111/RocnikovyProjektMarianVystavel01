@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-    Window window = new Window();
+        UserDatabase us = new UserDatabase();
+        us.getListFromDocument();
+        LunchPage page = new LunchPage(us);
     }
 }
