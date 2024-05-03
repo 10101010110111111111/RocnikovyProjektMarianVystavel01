@@ -56,7 +56,7 @@ public class LunchPage implements ActionListener {
         // setting up messageLabel
 
             
-            mesageLabel.setBounds(800,700,250,50);
+            mesageLabel.setBounds(750,700,700,50);
             mesageLabel.setFont(new Font(null,Font.ITALIC,40));
 
 
@@ -68,6 +68,7 @@ public class LunchPage implements ActionListener {
             frame.setResizable(false);
             frame.setSize(1920,1080);
             frame.setVisible(true);
+            frame.setLayout(null);
 
 
             ImageIcon icon = new ImageIcon("logo.png");//to do no logo right now
