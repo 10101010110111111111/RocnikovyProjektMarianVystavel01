@@ -98,7 +98,7 @@ public class LunchPage implements ActionListener {
 
             if (us.LogIN(s1,s2)){
                 frame.dispose();
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(us);
             }else {
                 passwordField.setText("");
                 mesageLabel.setForeground(redColor);
@@ -117,7 +117,7 @@ public class LunchPage implements ActionListener {
 
             if (us.register(s1,s2)){
                 frame.dispose();
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(us);
             }else {
 
                 textField.setText("");
