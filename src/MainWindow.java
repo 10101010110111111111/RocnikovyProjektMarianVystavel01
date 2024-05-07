@@ -15,6 +15,9 @@ public class MainWindow  implements ActionListener {
     JButton bouthButton = new JButton("oboje");
     JButton startButton = new JButton("spustit");
     Font font = new Font(null,Font.PLAIN,35);
+
+    private boolean wantTest = true;
+    private TestingChoice choice = TestingChoice.BOUTH;
     public MainWindow(UserDatabase userDatabase) {
 
         this.us = userDatabase;
@@ -40,6 +43,7 @@ public class MainWindow  implements ActionListener {
                 learningButton.setFocusable(false);
                 learningButton.addActionListener(this);
                 learningButton.setFont(font);
+                learningButton.setEnabled(false);
 
                 testingButton.setBounds(535+400,350,250,50);
                 testingButton.setFocusable(false);
@@ -60,6 +64,7 @@ public class MainWindow  implements ActionListener {
                 bouthButton.setFocusable(false);
                 bouthButton.addActionListener(this);
                 bouthButton.setFont(font);
+                bouthButton.setEnabled(false);
 
                 startButton.setBounds(835,840,250,50);//hotovo
                 startButton.setFocusable(false);
@@ -98,6 +103,44 @@ public class MainWindow  implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == learningButton){
+            learningButton.setEnabled(false);
+            testingButton.setEnabled(true);
+            wantTest = false;
+        }
+        if (e.getSource() == testingButton){
+            testingButton.setEnabled(false);
+            learningButton.setEnabled(true);
+            wantTest = true;
+        }
+        if (e.getSource() == javaTheoryButton){
+            javaTheoryButton.setEnabled(false);
+
+            codeTOAnswerButton.setEnabled(true);
+            bouthButton.setEnabled(true);
+
+            choice = TestingChoice.JAVATHEORY;
+        }
+        if (e.getSource() == codeTOAnswerButton){
+            codeTOAnswerButton.setEnabled(false);
+
+            javaTheoryButton.setEnabled(true);
+            bouthButton.setEnabled(true);
+
+            choice = TestingChoice.CODE;
+        }
+        if (e.getSource() == bouthButton){
+            bouthButton.setEnabled(false);
+
+            javaTheoryButton.setEnabled(true);
+            codeTOAnswerButton.setEnabled(true);
+
+            choice = TestingChoice.BOUTH;
+        }
+        if (e.getSource() == startButton){
+            TestingPage testingPage = new TestingPage(us,wantTest,choice);
+        }
 
     }
 }
