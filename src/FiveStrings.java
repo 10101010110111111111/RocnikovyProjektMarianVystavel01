@@ -1,16 +1,16 @@
-public class ListAboutFiveStrings {
+public class FiveStrings {
     private String pictureName;
     private String rightAnswer;
     private String Answer2;
     private String Answer3;
     private String Answer4;
 
-    public ListAboutFiveStrings(String pictureName, String rightAnswer, String answer2, String answer3, String answer4) {
+    public FiveStrings(String pictureName, String rightAnswer, String answer2, String answer3, String answer4) {
         this.pictureName = pictureName;
         this.rightAnswer = rightAnswer;
-        Answer2 = answer2;
-        Answer3 = answer3;
-        Answer4 = answer4;
+        this.Answer2 = answer2;
+        this.Answer3 = answer3;
+        this.Answer4 = answer4;
     }
 
     public String getPictureName() {
@@ -26,7 +26,12 @@ public class ListAboutFiveStrings {
     }
 
     public void setRightAnswer(String rightAnswer) {
-        this.rightAnswer = rightAnswer;
+        if (rightAnswer != null){
+            this.rightAnswer = rightAnswer;
+        }else {
+            throw new RuntimeException("správná odpověď vždy musí existovat nemůže být null");
+        }
+
     }
 
     public String getAnswer2() {

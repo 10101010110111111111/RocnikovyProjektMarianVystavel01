@@ -89,4 +89,11 @@ public class UserDatabase {
         return false;
     }
 
+    public User getActiveUser() {
+        return activeUser;
+    }
+
+    public void setActiveUser(User activeUser) {
+        this.activeUser = activeUser;
+    }
 }

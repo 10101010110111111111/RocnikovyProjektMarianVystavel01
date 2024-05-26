@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainWindow  implements ActionListener {
+public class SettingWindow implements ActionListener {
 
     UserDatabase us;
     JFrame frame = new JFrame();
@@ -16,9 +16,9 @@ public class MainWindow  implements ActionListener {
     JButton startButton = new JButton("spustit");
     Font font = new Font(null,Font.PLAIN,35);
 
-    private boolean wantTest = true;
+    private boolean wantTest = false;
     private TestingChoice choice = TestingChoice.BOUTH;
-    public MainWindow(UserDatabase userDatabase) {
+    public SettingWindow(UserDatabase userDatabase) {
 
         this.us = userDatabase;
 
@@ -139,6 +139,7 @@ public class MainWindow  implements ActionListener {
             choice = TestingChoice.BOUTH;
         }
         if (e.getSource() == startButton){
+            frame.dispose();
             TestingPage testingPage = new TestingPage(us,wantTest,choice);
         }
 
