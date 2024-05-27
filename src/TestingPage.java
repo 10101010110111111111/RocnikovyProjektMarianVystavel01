@@ -189,6 +189,12 @@ public class TestingPage implements ActionListener {
 
 
     }
+
+    /**
+     *
+     * @param strings
+     * @return
+     */
     public String selectWrongAnswer(FiveStrings strings){
         boolean isEnd = false;
         Random random = new Random();
@@ -213,6 +219,12 @@ public class TestingPage implements ActionListener {
                     !but3.getText().equals(returned) &&
                     !but4.getText().equals(returned)){
 
+                isEnd = true;
+            }
+            if (but1.getText().equals("null") ||
+                    but2.getText().equals("null") ||
+                    but3.getText().equals("null") ||
+                    but4.getText().equals("null")){
                 isEnd = true;
             }
         }while (!isEnd);
