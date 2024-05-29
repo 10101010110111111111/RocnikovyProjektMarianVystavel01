@@ -22,7 +22,7 @@ Co je to Regex?,Zkratka pro regulární výrazy což jsou vzory používané pro
 Co je to git,Distribuovaný verzovací systém pro správu zdrojového kódu a spolupráci vývojářů,null,null,null
 Co je to GitHub?,Webová platforma a cloudový hosting služba která umožňuje správu verzí a spolupráci na softwarových projektech pomocí systému Git,null,null,null
 Co je to ArrayList, Dynamický seznam který umožňuje ukládat a manipulovat s objekty v Javě,null,null,null
-co je to LinkedList, Lineární datová struktura která obsahuje spojené uzly přičemž každý uzel ukazuje na následující uzel v seznamu,null,null,null
-co je to TreeSet, Implementace rozhraní Set v Javě která udržuje prvky v seřazeném stromovém uspořádání (například podle přirozeného pořadí nebo pomocí definovaného komparátoru),null,null,null
-co je to HashSet, Implementace rozhraní Set v Javě která ukládá prvky do tabulky hash hodnot což umožňuje rychlé vyhledávání vkládání a odstraňování prvků,null,null,null
-co je to Pole, Jednorozměrná datová struktura v programování která umožňuje ukládat a manipulovat s více prvky stejného typu pod jedním identifikátorem,null,null,null
+co je to LinkedList, Lineární datová struktura která obsahuje spojené uzly přičemž  každý uzel ukazuje na následující uzel v seznamu,null,null,null
+co je to TreeSet, Implementace rozhraní Set v Javě která udržuje  prvky v seřazeném  stromovém uspořádání (například podle přirozeného pořadí nebo pomocí definovaného komparátoru),null,null,null
+co je to HashSet, Implementace rozhraní Set v Javě která ukládá  prvky do tabulky hash  hodnot což umožňuje rychlé vyhledávání vkládání a odstraňování prvků,null,null,null
+co je to Pole, Jednorozměrná datová struktura v programování která  umožňuje ukládat  a manipulovat s více prvky stejného typu pod jedním identifikátorem,null,null,null

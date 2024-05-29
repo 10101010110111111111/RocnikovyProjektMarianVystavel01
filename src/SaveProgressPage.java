@@ -27,6 +27,14 @@ public class SaveProgressPage implements ActionListener {
         qvestionLabel.setVerticalTextPosition(JLabel.BOTTOM);// tohle je taky super nefunkčí používá se to jen v případě že je k tomu obrázek
         qvestionLabel.setVerticalAlignment(JLabel.TOP);// <--------------------------------tohle
 
+        JLabel XPLabel = new JLabel("celkem XP: "+userDatabase.getActiveUser().getXP());
+        XPLabel.setForeground(new Color(200,200,100));
+        XPLabel.setBounds(1000,250,1200,200);// tenhle shit nefunguje pokud v jFrejmu není vypnutý layout
+        XPLabel.setFont(new Font(null,Font.BOLD,70));
+        XPLabel.setHorizontalTextPosition(JLabel.CENTER);
+        XPLabel.setVerticalTextPosition(JLabel.BOTTOM);// tohle je taky super nefunkčí používá se to jen v případě že je k tomu obrázek
+        XPLabel.setVerticalAlignment(JLabel.TOP);// <--------------------------------tohle
+
 
 
 
@@ -76,6 +84,7 @@ public class SaveProgressPage implements ActionListener {
         frame.add(nextTestButton);
 
         frame.add(qvestionLabel);
+        frame.add(XPLabel);
 
 
 

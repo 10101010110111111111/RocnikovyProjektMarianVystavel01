@@ -24,6 +24,7 @@ public class TestingPage implements ActionListener {
     private JButton but4 = new JButton();
     private JButton STARTBUTTON = new JButton();
     private Font font = new Font(null,Font.PLAIN,15);
+    private Font font1 = new Font(null,Font.PLAIN,50);
     private JProgressBar bar = new JProgressBar();
 
 
@@ -41,8 +42,11 @@ public class TestingPage implements ActionListener {
         this.us = us;
         label.setBounds(960 - 450,20,900,500);
         label.setVisible(true);
-
+        label.setVerticalTextPosition(JLabel.CENTER);
+        label.setHorizontalTextPosition(JLabel.CENTER);
         label.setIcon(image);
+        label.setFont(font1);
+        label.setForeground(new Color(150,200,10));
 
         STARTBUTTON.setBounds(0,0,300,300);
         STARTBUTTON.setFocusable(false);
@@ -91,7 +95,7 @@ public class TestingPage implements ActionListener {
         frame.add(but2);
         frame.add(but3);
         frame.add(but4);
-        frame.add(label);
+        frame.add(label,BorderLayout.CENTER);
         frame.add(STARTBUTTON);
         frame.add(bar);
 
@@ -99,15 +103,20 @@ public class TestingPage implements ActionListener {
 
     }
     public void updateImage(String newImage){
-        image.setImage(new ImageIcon(newImage).getImage());
+        label.setText("");
+        String imagePath = "Images/" + newImage;
+        image.setImage(new ImageIcon(imagePath).getImage());
+        label.setIcon(image);
 
     }
     public void updateText(String txt){
+        label.setIcon(null);
         label.setText(txt);
     }
     public void newQvestion(String file){
         CodeToAnswer cTA  = new CodeToAnswer();
         cTA.getListFromFile(file);
+
 
         JavaTheory jT = new JavaTheory();
         jT.getListFromFile(file);
@@ -263,20 +272,11 @@ public class TestingPage implements ActionListener {
         but4.setEnabled(true);
         STARTBUTTON.setEnabled(false);
     }
-    public void changeBackGround(boolean tORf){
-        if (tORf){
-            frame.setBackground(Color.green);
-            label.setBackground(Color.GREEN);
-        }
-        else{
-            label.setBackground(Color.GREEN);
-            frame.setBackground(Color.RED);
-        }
-    }
+
     public void barManipulation(boolean wasAnswerRight){
         if (wasAnswerRight){
             _15answers++;
-            bar.setValue(100 * _15answers / 1);
+            bar.setValue(100 * _15answers / 15);
             if (bar.getValue() == 100){
                 STARTBUTTON.setText("konec");
             }
@@ -294,6 +294,7 @@ public class TestingPage implements ActionListener {
             }else {
                 newQvestion("nic.txt");
                 STARTBUTTON.setText("další otázka");
+
                 ui.deactivateLabels();
                 activateButtons();
             }
@@ -301,7 +302,7 @@ public class TestingPage implements ActionListener {
         }
         if (e.getSource() == but1){
             buttonPressed = 1;
-            changeBackGround(wasAnswerRight());
+
             deactivateButtons();
             ui.programRespand(wasAnswerRight());
             barManipulation(wasAnswerRight());
@@ -309,7 +310,7 @@ public class TestingPage implements ActionListener {
         }
         if (e.getSource() == but2){
             buttonPressed = 2;
-            changeBackGround(wasAnswerRight());
+
             deactivateButtons();
             ui.programRespand(wasAnswerRight());
             barManipulation(wasAnswerRight());
@@ -317,7 +318,7 @@ public class TestingPage implements ActionListener {
         }
         if (e.getSource() == but3){
             buttonPressed = 3;
-            changeBackGround(wasAnswerRight());
+
             deactivateButtons();
             ui.programRespand(wasAnswerRight());
             barManipulation(wasAnswerRight());
@@ -325,7 +326,7 @@ public class TestingPage implements ActionListener {
         }
         if (e.getSource() == but4){
             buttonPressed = 4;
-            changeBackGround(wasAnswerRight());
+
             deactivateButtons();
             ui.programRespand(wasAnswerRight());
             barManipulation(wasAnswerRight());

@@ -1,0 +1,6 @@
+faktorial.png,Vypočítá faktoriál zadaného čísla,Určí zda je zadané číslo prvočíslo,Zjist zda je zadané číslo sudé,Spočítá součet všech prvočísel menších než zadané číslo
+for.png,Vytiskne všechna sudá čísla od 2 do 10,Vytiskne všechna lichá čísla od 2 do 10,Vytiskne všechna čísla od 2 do 10,Vytvoří seznam sudých čísel od 2 do 10
+pozdrav.png,Spustí metodu printWelcomeMessage() a vypíše uvítací zprávu,Vytiskne "Vítejte v našem programu!" na standardní výstup,Vypíše dvě uvítací zprávy na standardní výstup,Vytvoří instanci třídy WelcomeMessage
+fibonaci.png,Vytiskne prvních 10 členů Fibonacciho posloupnosti,Spočítá součet prvních 10 členů Fibonacciho posloupnosti,Vypočítá průměr prvních 10 členů Fibonacciho posloupnosti,Vytiskne prvních 10 sudých čísel
+kvrovnice.png,Vyhodnotí kvadratickou rovnici,Spočítá průměr dvou čísel,Vypíše prvních 10 prvočísel,Zjistí zda je číslo sudé
+suda.png,Vytiskne prvních 10 sudých čísel,Spočítá součet prvních 10 sudých čísel,Určí zda jsou prvních 10 čísel sudá,Generuje náhodná čísla a vypisuje pouze ta která jsou v rozsahu od 0 do 100

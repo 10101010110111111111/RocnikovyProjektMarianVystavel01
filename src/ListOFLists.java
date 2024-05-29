@@ -21,6 +21,10 @@ public class ListOFLists {
             String manipulatedString = "";
             while ((manipulatedString = br.readLine()) != null){
                 String[] strings = manipulatedString.split(",");
+                strings[1] = addNewLine(strings[1]);
+                strings[2] = addNewLine(strings[2]);
+                strings[3] = addNewLine(strings[3]);
+                strings[4] = addNewLine(strings[4]);
 
                 list.add(new FiveStrings(strings[0],strings[1],strings[2],
                         strings[3],strings[4]));
@@ -29,6 +33,40 @@ public class ListOFLists {
             throw new RuntimeException(e);
         }
 
+    }
+    /*private String addNewLine(String string){
+        String[] strings = string.split(" ");
+        String s = "<html>";
+        String sEnd = "</html>";
+        for (int i = 0; i< strings.length;i++){
+            s += strings[i];
+            s += " ";
+            if (i % 6 == 0){
+                s+= "<br>";
+            }
+        }
+        s+= sEnd;
+        return s;
+    }
+
+     */
+
+    // s tímhle mi pomohl chatGPT protože ve škole jste nám nic neřekli
+    private String addNewLine(String string){
+        String[] strings = string.split(" ");
+        if (strings.length == 1){
+            return string;
+        }
+        StringBuilder s = new StringBuilder("<html>");
+        for (int i = 0; i < strings.length; i++) {
+            s.append(strings[i]);
+            s.append(" ");
+            if ((i + 1) % 6 == 0 && i != strings.length - 1) {
+                s.append("<br>");
+            }
+        }
+        s.append("</html>");
+        return s.toString();
     }
     protected void makeFileFromList(String fileName){
         try {
