@@ -5,6 +5,14 @@ public class FiveStrings {
     private String Answer3;
     private String Answer4;
 
+    /**
+     * konstruktor
+     * @param pictureName
+     * @param rightAnswer
+     * @param answer2
+     * @param answer3
+     * @param answer4
+     */
     public FiveStrings(String pictureName, String rightAnswer, String answer2, String answer3, String answer4) {
         this.pictureName = pictureName;
         this.rightAnswer = rightAnswer;

@@ -12,9 +12,22 @@ public class ListOFLists {
 
     }
 
+    /**
+     * přidá nový prvek
+     * @param pictureName
+     * @param rightAnswer
+     * @param Answer2
+     * @param Answer3
+     * @param Answer4
+     */
     protected void addNewQvestion(String pictureName,String rightAnswer,String Answer2,String Answer3,String Answer4){
         list.add(new FiveStrings(pictureName,rightAnswer,Answer2,Answer3,Answer4));
     }
+
+    /**
+     * vytvoří hodnoty ze souboru
+     * @param fileName
+     */
     protected void getListFromFile(String fileName){
         try {
             BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -52,6 +65,12 @@ public class ListOFLists {
      */
 
     // s tímhle mi pomohl chatGPT protože ve škole jste nám nic neřekli
+
+    /**
+     * vytváří txt tak aby šel dát na tllačítka učil jsem se kvuli tomu html ale chatGPT mi to potom vysvětlil a tuhle metodu zandal on
+     * @param string
+     * @return
+     */
     private String addNewLine(String string){
         String[] strings = string.split(" ");
         if (strings.length == 1){
@@ -68,6 +87,11 @@ public class ListOFLists {
         s.append("</html>");
         return s.toString();
     }
+
+    /**
+     * ukladá hodnoty do souboru (ukladání progresu)
+     * @param fileName
+     */
     protected void makeFileFromList(String fileName){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));

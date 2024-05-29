@@ -8,20 +8,41 @@ public class CodeToAnswer extends ListOFLists{
 
     }
 
+    /**
+     * konstruktor
+     */
+
     public CodeToAnswer() {
         super();
     }
+
+    /**
+     * vytvoří novou otázku pomocí kodu ze třída ListOFLists
+     * @param pictureName
+     * @param rightAnswer
+     * @param Answer2
+     * @param Answer3
+     * @param Answer4
+     */
 
     @Override
     protected void addNewQvestion(String pictureName, String rightAnswer, String Answer2, String Answer3, String Answer4) {
         super.addNewQvestion(pictureName, rightAnswer, Answer2, Answer3, Answer4);
     }
+    /**
+     * používaá metodu z ListOFLists ale jmeno souboru je Code.txt
+     * @param fileName
+     */
 
     @Override
     protected void getListFromFile(String fileName) {
         fileName = "Code.txt";
         super.getListFromFile(fileName);
     }
+    /**
+     * upně stejné jako v ListOFLists
+     * @param fileName
+     */
 
     @Override
     protected void makeFileFromList(String fileName) {

@@ -17,7 +17,10 @@ public class LunchPage implements ActionListener {
     JLabel mesageLabel = new JLabel();
 
 
-
+    /**
+     * konstruktor
+     * @param us
+     */
     public LunchPage(UserDatabase us){
         this.us = us;
 
@@ -86,6 +89,11 @@ public class LunchPage implements ActionListener {
         frame.add(labelForPassWordField);
         frame.add(mesageLabel);
     }
+
+    /**
+     * práce s tlačítky
+     * @param e the event to be processed
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

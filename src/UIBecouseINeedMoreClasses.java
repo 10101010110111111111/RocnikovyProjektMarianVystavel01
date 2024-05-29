@@ -9,6 +9,13 @@ public class UIBecouseINeedMoreClasses {
     private JLabel jLabel2 = new JLabel();
     private Font font = new Font(null,Font.PLAIN,40);
 
+    /**
+     * taky konstruktor
+     * @param frame
+     * @param us
+     * @param testujeSe
+     */
+
     public UIBecouseINeedMoreClasses(JFrame frame,UserDatabase us,boolean testujeSe) {
         this.us = us;
         this.isTesting = testujeSe;
@@ -29,6 +36,11 @@ public class UIBecouseINeedMoreClasses {
         frame.setLayout(null);
 
     }
+
+    /**
+     * tohle přidáva nebo odebírá XP
+     * @param tORf
+     */
     public void programRespand(boolean tORf){
         if (tORf){
             if (isTesting){
@@ -62,6 +74,10 @@ public class UIBecouseINeedMoreClasses {
 
         }
     }
+
+    /**
+     * tohle maže text aby tam nebyl při další otázce
+     */
     public void deactivateLabels(){
         jLabel1.setVisible(false);
         jLabel2.setVisible(false);

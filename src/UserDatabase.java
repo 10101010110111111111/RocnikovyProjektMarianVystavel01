@@ -5,6 +5,10 @@ public class UserDatabase {
     private ArrayList<User> listOFUsers = new ArrayList<>();
     private User activeUser;
 
+    /**
+     * vytvoří seznam uživatelu pomocí souboru
+     */
+
     public void getListFromDocument(){
         try {
             BufferedReader br = new BufferedReader(new FileReader("DocumentOFUsers.txt"));
@@ -21,6 +25,10 @@ public class UserDatabase {
         }
 
     }
+
+    /**
+     * vytvoří dokument pomocí seznamu
+     */
     public void createDocumentByLIst(){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("DocumentOFUsers.txt"));
@@ -55,7 +63,12 @@ public class UserDatabase {
         }
     }
 
-
+    /**
+     * dovolí vytvořit nového uživatele pomocí rregistrování
+     * @param name
+     * @param password
+     * @return
+     */
     public boolean register(String name,String password){
         boolean isPosible = true;
         if (name.length() < 1){
@@ -74,6 +87,14 @@ public class UserDatabase {
         return isPosible;
 
     }
+
+    /**
+     * přihlášení uživatele
+     *
+     * @param name
+     * @param password
+     * @return
+     */
     public boolean LogIN(String name,String password){
         User potencionalUser;
         for (User u : listOFUsers){
@@ -91,9 +112,5 @@ public class UserDatabase {
 
     public User getActiveUser() {
         return activeUser;
-    }
-
-    public void setActiveUser(User activeUser) {
-        this.activeUser = activeUser;
     }
 }

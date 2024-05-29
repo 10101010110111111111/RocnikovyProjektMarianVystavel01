@@ -12,7 +12,14 @@ public class SaveProgressPage implements ActionListener {
     Font font = new Font(null,Font.PLAIN,35);
     private TestingChoice choice;
     private boolean wantTest;
+    private JLabel XPLabel;
 
+    /**
+     * konstruktor který nastavuje základní hodnoty
+     * @param userDatabase
+     * @param wantTest
+     * @param choice
+     */
     public SaveProgressPage(UserDatabase userDatabase,boolean wantTest,TestingChoice choice) {
 
         this.us = userDatabase;
@@ -27,7 +34,7 @@ public class SaveProgressPage implements ActionListener {
         qvestionLabel.setVerticalTextPosition(JLabel.BOTTOM);// tohle je taky super nefunkčí používá se to jen v případě že je k tomu obrázek
         qvestionLabel.setVerticalAlignment(JLabel.TOP);// <--------------------------------tohle
 
-        JLabel XPLabel = new JLabel("celkem XP: "+userDatabase.getActiveUser().getXP());
+        XPLabel = new JLabel("celkem XP: "+userDatabase.getActiveUser().getXP());
         XPLabel.setForeground(new Color(200,200,100));
         XPLabel.setBounds(1000,250,1200,200);// tenhle shit nefunguje pokud v jFrejmu není vypnutý layout
         XPLabel.setFont(new Font(null,Font.BOLD,70));
@@ -91,6 +98,11 @@ public class SaveProgressPage implements ActionListener {
 
 
     }
+
+    /**
+     * reakce s tlačátky
+     * @param e the event to be processed
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

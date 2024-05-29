@@ -18,6 +18,11 @@ public class SettingWindow implements ActionListener {
 
     private boolean wantTest = false;
     private TestingChoice choice = TestingChoice.BOUTH;
+
+    /**
+     * konstruktor nastavuje základní hodnoty
+     * @param userDatabase
+     */
     public SettingWindow(UserDatabase userDatabase) {
 
         this.us = userDatabase;
@@ -100,6 +105,11 @@ public class SettingWindow implements ActionListener {
 
 
     }
+
+    /**
+     * práce s tlačítky
+     * @param e the event to be processed
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

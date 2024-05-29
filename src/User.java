@@ -6,6 +6,11 @@ public class User {
     private int hoursSpend;
     private Boolean wasTrainingToday;
 
+    /**
+     * konstruktor
+     * @param name
+     * @param password
+     */
     public User(String name, String password) {
         this.name = name;
         this.password = password;
@@ -15,6 +20,15 @@ public class User {
         this.wasTrainingToday = false;
     }
 
+    /**
+     * konstruktor 2
+     * @param name
+     * @param password
+     * @param XP
+     * @param dayStreak
+     * @param hoursSpend
+     * @param wasTrainingToday
+     */
     public User(String name, String password, int XP, int dayStreak, int hoursSpend, Boolean wasTrainingToday) {
         this.name = name;
         this.password = password;

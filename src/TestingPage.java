@@ -32,6 +32,13 @@ public class TestingPage implements ActionListener {
     private boolean wantTest;
     private int _15answers;
 
+    /**
+     * konstruktor nasteví základní hodnoty
+     * @param us
+     * @param wantTest
+     * @param choice
+     */
+
     public TestingPage(UserDatabase us, boolean wantTest, TestingChoice choice) {
         ui = new UIBecouseINeedMoreClasses(frame,us,wantTest);
         this.choice = choice;
@@ -102,6 +109,11 @@ public class TestingPage implements ActionListener {
 
 
     }
+
+    /**
+     * nastaví obrázek
+     * @param newImage
+     */
     public void updateImage(String newImage){
         label.setText("");
         String imagePath = "Images/" + newImage;
@@ -109,10 +121,20 @@ public class TestingPage implements ActionListener {
         label.setIcon(image);
 
     }
+
+    /**
+     * nastaví text
+     * @param txt
+     */
     public void updateText(String txt){
         label.setIcon(null);
         label.setText(txt);
     }
+
+    /**
+     * vytvoří novou otázku pomocí enumu který říká jak se to má dělat
+     * @param file
+     */
     public void newQvestion(String file){
         CodeToAnswer cTA  = new CodeToAnswer();
         cTA.getListFromFile(file);
@@ -136,6 +158,11 @@ public class TestingPage implements ActionListener {
             }
         }
     }
+
+    /**
+     * kontroluje správnost otázky
+     * @return
+     */
     public boolean wasAnswerRight(){
         if (buttonPressed == rightButton){
             return true;
@@ -143,6 +170,12 @@ public class TestingPage implements ActionListener {
             return false;
 
     }
+
+    /**
+     * vybere náhodnou otázku z listu a kontroluje aby nebyla stejná jako ta předchozí
+     * @param lists
+     * @return
+     */
     public FiveStrings choseRandomlistWithFiveStrings(ListOFLists lists){
         Random random = new Random();
         int specialCount = 0;
@@ -160,6 +193,11 @@ public class TestingPage implements ActionListener {
 
 
     }
+
+    /**
+     * nastaví správné a špatné odpovědi
+     * @param lists
+     */
     public void setButtonsANDLabelsText(ListOFLists lists){
         Random random = new Random();
         rightButton = random.nextInt(1,5);
@@ -200,7 +238,7 @@ public class TestingPage implements ActionListener {
     }
 
     /**
-     *
+     *vybere špatnou odpověĎ
      * @param strings
      * @return
      */
@@ -239,6 +277,12 @@ public class TestingPage implements ActionListener {
         }while (!isEnd);
         return returned;
     }
+
+    /**
+     *
+     * zjistí jestli je txt obrázek nebo text pomocí regexu
+     * @param imageORText
+     */
     public void setImageORText(String imageORText){
         String[] strings  = imageORText.split("\\.");
         if (strings.length > 1){
@@ -248,10 +292,19 @@ public class TestingPage implements ActionListener {
         }
     }
 
+    /**
+     * vybere číslo mezi 1 a 2 je to často používaná metoda
+     * @return
+     */
+
     public int randal(){
         Random random = new Random();
         return random.nextInt(1,3);
     }
+
+    /**
+     * vypíná a zapíná tlačítka
+     */
     public void deactivateButtons(){
         but1.setEnabled(false);
         but2.setEnabled(false);
@@ -259,12 +312,20 @@ public class TestingPage implements ActionListener {
         but4.setEnabled(false);
         STARTBUTTON.setEnabled(true);
     }
+
+    /**
+     * smaže text z tlačítka
+     */
+
     public void clearButtonsText(){
         but1.setText("");
         but2.setText("");
         but3.setText("");
         but4.setText("");
     }
+    /**
+     * vypíná a zapíná tlačítka
+     */
     public void activateButtons(){
         but1.setEnabled(true);
         but2.setEnabled(true);
@@ -273,6 +334,10 @@ public class TestingPage implements ActionListener {
         STARTBUTTON.setEnabled(false);
     }
 
+    /**
+     * pracuje se z progress barem JBar nebo tak něco
+     * @param wasAnswerRight
+     */
     public void barManipulation(boolean wasAnswerRight){
         if (wasAnswerRight){
             _15answers++;
@@ -282,6 +347,11 @@ public class TestingPage implements ActionListener {
             }
         }
     }
+
+    /**
+     * tlačítka
+     * @param e the event to be processed
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
